@@ -40,14 +40,17 @@ namespace TestTask1Intetics
 
         private static void SolveSmart()
         {
+            int numberOfComparisons = 0;
             for (var diagonalIndex = 0; diagonalIndex < NUMBER_OF_DIAGONALS; diagonalIndex++)
             {
                 var diagonalElements = GetDiagonalElement(diagonalIndex);
                 foreach (var product in diagonalElements)
                 {
+                    numberOfComparisons++;
                     if (IsPolindrom(product))
                     {
                         Console.WriteLine(product);
+                        Console.WriteLine(numberOfComparisons);
                         Console.ReadLine();
                         return;
                     }
